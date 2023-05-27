@@ -1,24 +1,10 @@
 # Slackr
 
-1. Background & Motivation
-2. The Task
-3. Getting Started
+## 0. Clarifications
 
-## 0. Change Log
+* The password field is for setting new passwords only, and does not need to pull a password from the backend.
 
-* 08/10: Clarified that the password field is for setting new passwords only, and does not need to pull a password from the backend.
-
-## 1. Background & Motivation
-
-Web-based applications are becoming the most common way to build a digital capability accessible to a mass audience. While there are modern tools that help us build these rapidly, it's important to understand the fundamental JavaScript-based technology and architectures that exist, both to gain a deeper understanding for when these skills may be needed, but also to simply understand the mechanics of fundamental JS. Even when working with a high level framework like ReactJS, understanding (in-concept) the code that it is transpiled to will ensure you're a more well rounded web-based engineer.
-
-This assignment consists of building a **frontend** website in Vanilla JS (no ReactJS or other frameworks). This frontend will interact with a RESTful API HTTP backend that is built in JavaScript (NodeJS express server) and provided to you.
-
-A theoretical background on how to interface with this API can be found the "promises & fetch" lecture.
-
-The web-based application you build is required to be a single page app (SPA). Single page apps give websites an "app-like feeling", and are characterised by their use of a single full load of an initial HTML page, and then using AJAX/fetch to dynamically manipulate the DOM without ever requiring a full page reload. In this way, SPAs are generated, rendered, and updated using JavaScript. Because SPAs don’t require a user to navigate away from a page to do anything, they retain a degree of user and application state. In short, this means you will only ever have `index.html` as your HTML page, and that any sense of "moving between pages" will just be modifications of the DOM.
-
-## 2. The Task
+## 1. The Task
 
 Your task is to build a frontend for a UNSW rip-off version of the popular messaging tool [Slack](https://slack.com/). If you haven't used this application before (or similar applications like Discord, Teams), we would recommend creating your own slack workspace to place around with the tool.
 
@@ -28,7 +14,9 @@ Instead of providing visuals of what the frontend (your task) should look like, 
 
 The requirements describe a series of **screens**. Screens can be popups/modals, or entire pages. The use of that language is so that you can choose how you want it to be displayed. A screen is essentially a certain state of your web-based application.
 
-### 2.1. Milestone 1 - Registration & Login (15%)
+## 2. Milestones
+
+### 2.1. Milestone 1 - Registration & Login 
 
 This focuses on the basic user interface to register and log in to the site.
 
@@ -52,7 +40,7 @@ This focuses on the basic user interface to register and log in to the site.
  * Whenever the frontend or backend produces an error, there shall be an error popup on the screen with a message (either a message derived from the backend error response, or one meaningfully created on the frontend).
  * This popup can be closed/removed/deleted by pressing an "x" or "close" button.
 
-### 2.2. Milestone 2 - Creating and viewing channels (10%)
+### 2.2. Milestone 2 - Creating and viewing channels 
 
 Milestone 2 focuses on creating **channels**, and viewing the basic channel screen layout for a single channel.
 
@@ -76,7 +64,7 @@ Milestone 2 focuses on creating **channels**, and viewing the basic channel scre
  * If the user is not a member of the channel, they do not need to see the channel details, but should be given a way to join the channel.
  * If the user is a member of the channel, there should be an option to leave the channel.
 
-### 2.3. Milestone 3 - Channel messages (18%)
+### 2.3. Milestone 3 - Channel messages 
 
 Milestone 3 focuses on the display and interaction of messages on a single channel screen.
 
@@ -112,7 +100,7 @@ Milestone 3 focuses on the display and interaction of messages on a single chann
  * Users can pin and unpin messages.
  * There should be a way for users to view all the channel's pinned messages at once. If the user is only on the first page of messages, but there is a pinned message on the third page, they should not have to navigate to the third page to see it.
 
-### 2.4. Milestone 4 - Multi-user interactivity (10%)
+### 2.4. Milestone 4 - Multi-user interactivity 
 
 Milestone 4 focuses on the interactions that come from having multiple users in the system.
 
@@ -132,7 +120,7 @@ Milestone 4 focuses on the interactions that come from having multiple users in 
  * On a user's own profile screen, they can update their own profile, including name, bio, email, and password (as described above).
  * On a user's own profile screen, they should be able to upload and change their profile photo.
 
-### 2.5. Milestone 5 - Photos in channels (7%)
+### 2.5. Milestone 5 - Photos in channels 
 
 Milestone 5 focuses on being able to upload and send photos as part of messages in a single channel screen.
 
@@ -144,7 +132,7 @@ Milestone 5 focuses on being able to upload and send photos as part of messages 
  * Photos in the channel messages should be displayed as small thumbnails, with the option to click to enlarge the image in a modal.
  * In the modal, there should be arrow buttons allowing the user to view other images sent in the channel.
 
-### 2.6. Milestone 6 - Challenge components (5%)
+### 2.6. Milestone 6 - Challenge components 
 
 Milestone 6 focuses on some harder components that are designed to start to separate out HD (High Distinction) students from one another. These features require independent learning and research.
 
@@ -152,45 +140,15 @@ Milestone 6 focuses on some harder components that are designed to start to sepa
  * Instead of pagination, users can infinitely scroll through messages. For infinite scroll to be properly implemented, you need to progressively load posts as you scroll.
  * Once users have reached the end of a set of messages, while the fetch is happening, they should see a message or icon indicating that the next set of messages are currently being fetched.
 
-#### 2.6.2 Push notifications
- * Users can receive push notifications when another user posts to a channel they have joined.
- * To know whether someone or not has made a post, you must "poll" the server (i.e. intermittent requests, maybe every second, that check the state).
- * Polling is very inefficient for browsers, but can often be used as it simplifies the technical needs on the server.
-
-### 2.7. Milestone 7 - Extra challenge components (5%)
-
-Milestone 7 focuses on some even harder components that are designed to start to separate out HD (High Distinction) students from one another. These features require independent learning and research.
-
-#### 2.7.1 Offline access
- * Users can access the most recent channel they've loaded even without an internet connection.
- * Cache information from the latest channel in local storage in case of connection outages.
- * When the user tries to interact with the website at all in offline mode (e.g. send message, react) they should receive errors.
-
-#### 2.7.2 Fragment based URL routing
- * Users can access different screens using URL fragments:
- 	* `/#channel={channelId}` to access the channel screen of the particular channelId
-	* `/#profile` to view the authorised user's own profile
-	* `/#profile={userId}` to view the profile of the user with the particular userId
-
-_No course assistance will be provided for this component, you should do your own research as to how to implement this._
-
-### 2.8. Bonus Marks (5%)
-
-An extra 5% of the assignment can be attained via bonus marks, meaning a maximum mark of 105/100. Any bonus marks that extend your ass2 mark above 100% will bleed into other assignment marks, but cannot contribute outside of the 75% of the course that is allocated for assignment marks
-
-Your bonus feature(s) can be anything. You just have to think of something that could make your web app stand out in some minor or major way. Simple examples would include just making sure that your user interface and user experience stands out amongst other students, maybe through some user testing.
-
-You could also add extra features, such as some additional frontend form validations - the possibilities are limitless.
-
-If you do implement a bonus feature, describe the feature and its details in `bonus.md` in the root directory of this repository.
-
 ## 3. Getting started
 
 ### 3.1. The Frontend
 
+To run the frontend server, run `npm start` in the `frontend` directory. Further details can be found in the markdown file in the frontend folder.
+
 ### 3.2. The Backend
 
-You are prohibited from modifying the backend. No work needs to be done on the backend. It's provided to you simply to power your frontend.
+No work needs to be done on the backend. It's provided to you simply to power your frontend.
 
 The backend server exists in your individual repository. After you clone this repo, you must run `yarn install` in `backend` directory once.
 
