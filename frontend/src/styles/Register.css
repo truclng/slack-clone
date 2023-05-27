@@ -1,0 +1,7 @@
+.btns-bottom {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1vw;
+	margin-top: 2vh;
+}

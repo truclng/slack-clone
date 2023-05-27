@@ -1,0 +1,30 @@
+body {
+	margin: 0;
+	background-color: '#D4D4D4';
+}
+
+.home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.row-style {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1vw;
+}
+
+.bottom {
+	margin-top: 1vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.logo {
+	height: 20vh;
+	margin-top: 5vh;
+}
