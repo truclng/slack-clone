@@ -1,8 +1,9 @@
 # Slackr
 
-## 0. Clarifications
+## 0. Clarifications & Edits
 
 * The password field is for setting new passwords only, and does not need to pull a password from the backend.
+* Figma Link: https://www.figma.com/file/r3dmMaOT1X4k7W0Ayd4sGM/slackr?type=design&node-id=0%3A1&t=1OE8ccuEcXQ9ugsa-1
 
 ## 1. The Task
 
